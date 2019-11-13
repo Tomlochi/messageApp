@@ -1,0 +1,15 @@
+.app-continer {
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+  display: flex;
+
+  .medallia-logo {
+    display: flex;
+    height: 100px;
+  }
+  .app-nav {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+}
