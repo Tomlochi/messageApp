@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-import { FETCH_MESSAGES } from "./actions";
-import { SET_USER, SET_MESSAGES } from "./mutations";
+import { FETCH_MESSAGES } from "./actions.type";
+import { SET_USER, SET_MESSAGES } from "./mutations.type";
 Vue.use(Vuex);
 
 const state = {
@@ -23,17 +23,24 @@ const getters = {
   getMessages(state) {
     return state.messages;
   },
+
   getUnreadMessages(state) {
     return state.messages.filter(msg => {
       return !msg.isRead;
     });
+  },
+  getMessageById(state) {
+    return id =>
+      state.messages.filter(msg => {
+        return msg.id === id;
+      });
   }
 };
 
 const actions = {
   [FETCH_MESSAGES]({ commit }) {
     return axios
-      .get("http://localhost:3000/users")
+      .get("/users")
       .then(response => {
         commit(SET_USER, response.data[0].name);
         commit(SET_MESSAGES, response.data[0].messages);

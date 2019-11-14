@@ -1,26 +1,18 @@
 <template>
-  <div class="overflow-auto">
-    <p class="mt-3">Current Page: {{ currentPage }} / {{rows/perPage}}</p>
-
-    <b-table
-      class="inbox-table-container"
-      :items="this.messages"
-      :per-page="perPage"
-      :current-page="currentPage"
-      hover
-      :fields="fields"
-      small
-      @row-clicked="myRowClickHandler"
-    >
-      <b-form-checkbox
-        id="this.messages.id"
-        v-model="status"
-        name="checkbox-1"
-        value="accepted"
-        unchecked-value="not_accepted"
-      >I accept the terms and use</b-form-checkbox>
-    </b-table>
-
+  <div class="inbox-main-container">
+    <h3 class="inbox-current-page">Current Page: {{ currentPage }} / {{rows/perPage}}</h3>
+    <section>
+      <b-table
+        class="inbox-table-container"
+        :items="this.messages"
+        :per-page="perPage"
+        :current-page="currentPage"
+        hover
+        :fields="fields"
+        small
+        @row-clicked="redirectToMessage"
+      ></b-table>
+    </section>
     <b-pagination
       class="inbox-pagination"
       v-model="currentPage"
@@ -37,7 +29,6 @@ import { mapState } from "vuex";
 
 export default {
   name: "Inbox",
-
   data() {
     return {
       perPage: 20,
@@ -63,17 +54,18 @@ export default {
     };
   },
   computed: {
-    ...mapState(["user", "messages"]),
+    ...mapState(["messages"]),
     rows() {
+      // change name
       return this.messages.length;
     }
   },
   methods: {
-    myRowClickHandler(record) {
-      alert(record);
-      // 'record' will be the row data from items
-      // `index` will be the visible row number (available in the v-model 'shownItems')
+    redirectToMessage(record) {
+      return this.$router.push({ name: "message", params: { id: record.id } });
     }
   }
 };
 </script>
+
+x

@@ -1,8 +1,14 @@
-.inbox-table-container {
-  cursor: pointer;
-}
+.inbox-main-container {
+  .inbox-current-page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .inbox-table-container {
+    cursor: pointer;
+  }
 
-.inbox-pagination {
-  margin-top: 30px;
-  justify-content: center;
+  .inbox-pagination {
+    margin-top: 30px;
+    justify-content: center;
+  }
 }

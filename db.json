@@ -7,7 +7,7 @@
           "id": 1,
           "title": "amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante",
           "content": "luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in",
-          "isRead": true,
+          "isRead": false,
           "from": "Beckie Caughte",
           "deleted": false,
           "createdAt": "4/18/2019",
