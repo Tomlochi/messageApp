@@ -3,43 +3,33 @@
     <h2>Welcome to Mailbox</h2>
     <b-card :title="cardText">
       <b-card-text>
-        You have {{ getNumofUnreadMessages }} unread messages out of
-        {{ getNumofMessages }}
+        You have {{ getUnreadMessages.length }} unread messages out of
+        {{ getMessages.length }}
       </b-card-text>
-      <b-link href="#" class="card-link">View Messages</b-link>
+      <b-link @click="this.redirectToInbox" class="card-link">View Messages</b-link>
     </b-card>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import axios from "axios";
+import { mapState, mapGetters } from "vuex";
+import { FETCH_MESSAGES } from "../store/actions";
 export default {
   name: "home",
-  data() {
-    return {
-      userName: "",
-      messagesData: []
-    };
-  },
+
   mounted() {
-    axios.get("http://localhost:3000/users").then(response => {
-      this.userName = response.data[0].name;
-      this.messagesData = response.data[0].messages;
-    });
+    this.$store.dispatch(FETCH_MESSAGES);
   },
   computed: {
     ...mapState(["user", "messages"]),
-    getNumofMessages() {
-      return this.messagesData.length;
-    },
-    getNumofUnreadMessages() {
-      return this.messagesData.filter(msg => {
-        return !msg.isRead;
-      }).length;
-    },
+    ...mapGetters(["getMessages", "getUnreadMessages"]),
     cardText() {
-      return "Hello " + this.userName;
+      return "Hello " + this.user;
+    }
+  },
+  methods: {
+    redirectToInbox() {
+      return this.$router.push("/inbox");
     }
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="app-continer">
-      <img class="medallia-logo" src="./assets/medallia-logo.png" />
+      <img class="medallia-logo" src="./assets/medallia-logo.png" @click="this.rederictToMedallia" />
       <div class="app-nav">
         <router-link to="/">Home</router-link>|
         <router-link to="/inbox">Inbox</router-link>
@@ -16,7 +16,11 @@
 <script>
 export default {
   name: "app",
-  components: {}
+  methods: {
+    rederictToMedallia() {
+      return (window.location = "https://www.medallia.com");
+    }
+  }
 };
 </script>
 

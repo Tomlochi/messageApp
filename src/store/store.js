@@ -1,34 +1,52 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-
+import { FETCH_MESSAGES } from "./actions";
+import { SET_USER, SET_MESSAGES } from "./mutations";
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-    user: "",
-    messages: []
+const state = {
+  user: "",
+  messages: []
+};
+
+const mutations = {
+  [SET_USER](state, newValue) {
+    state.user = newValue;
   },
-  mutations: {
-    setUser: (state, newValue) => {
-      state.user = newValue;
-    },
-    setMessages: (state, newValue) => {
-      state.messages = newValue;
-    }
-  },
-  getters: {},
-  actions: {
-    getMessageData({ commit }) {
-      axios
-        .get("http://localhost:3000/users")
-        .then(response => {
-          commit("setUser", response.data[0].name);
-          commit("setMessages", response.data[0].messages);
-        })
-        .catch(error => {
-          throw new Error(error);
-        });
-    }
+  [SET_MESSAGES](state, newValue) {
+    state.messages = newValue;
   }
+};
+
+const getters = {
+  getMessages(state) {
+    return state.messages;
+  },
+  getUnreadMessages(state) {
+    return state.messages.filter(msg => {
+      return !msg.isRead;
+    });
+  }
+};
+
+const actions = {
+  [FETCH_MESSAGES]({ commit }) {
+    return axios
+      .get("http://localhost:3000/users")
+      .then(response => {
+        commit(SET_USER, response.data[0].name);
+        commit(SET_MESSAGES, response.data[0].messages);
+      })
+      .catch(error => {
+        throw new Error(error);
+      });
+  }
+};
+
+export default new Vuex.Store({
+  state,
+  actions,
+  mutations,
+  getters
 });
