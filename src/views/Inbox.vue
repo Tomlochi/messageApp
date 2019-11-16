@@ -4,12 +4,13 @@
     <section>
       <b-table
         class="inbox-table-container"
+        hover
+        small
         :items="this.messages"
         :per-page="perPage"
         :current-page="currentPage"
-        hover
         :fields="fields"
-        small
+        :tbody-tr-class="markUnreadMessage"
         @row-clicked="redirectToMessage"
       ></b-table>
     </section>
@@ -26,46 +27,27 @@
 
 <script>
 import { mapState } from "vuex";
+import { inboxData } from "../consts/pagesData";
 
 export default {
   name: "Inbox",
   data() {
-    return {
-      perPage: 20,
-      currentPage: 1,
-      fields: [
-        {
-          key: "from",
-          label: "Sender Name"
-        },
-        {
-          key: "title",
-          label: "Message Title"
-        },
-        {
-          key: "createdAt",
-          label: "Date"
-        },
-        {
-          key: "email",
-          label: "Sender Mail"
-        }
-      ]
-    };
+    return inboxData;
   },
   computed: {
     ...mapState(["messages"]),
     rows() {
-      // change name
       return this.messages.length;
     }
   },
   methods: {
     redirectToMessage(record) {
       return this.$router.push({ name: "message", params: { id: record.id } });
+    },
+    markUnreadMessage(message) {
+      if (!message.isRead) return "unread-message";
     }
   }
 };
 </script>
 
-x

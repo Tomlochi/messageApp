@@ -3,8 +3,21 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  .inbox-unread-message-text {
+    color: #add8e6;
+  }
   .inbox-table-container {
     cursor: pointer;
+    .unread-message {
+      font-weight: bold;
+      background-color: lightblue;
+    }
+    td:first-child + td {
+      max-width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   .inbox-pagination {

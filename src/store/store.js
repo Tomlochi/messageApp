@@ -25,25 +25,21 @@ const getters = {
   },
 
   getUnreadMessages(state) {
-    return state.messages.filter(msg => {
-      return !msg.isRead;
-    });
+    return state.messages.filter(msg => !msg.isRead);
   },
   getMessageById(state) {
-    return id =>
-      state.messages.filter(msg => {
-        return msg.id === id;
-      });
+    return id => state.messages.filter(msg => msg.id === id);
   }
 };
 
 const actions = {
   [FETCH_MESSAGES]({ commit }) {
     return axios
-      .get("/users")
+      .get("/db")
       .then(response => {
-        commit(SET_USER, response.data[0].name);
-        commit(SET_MESSAGES, response.data[0].messages);
+        const { user, messages } = response.data;
+        commit(SET_USER, user.name);
+        commit(SET_MESSAGES, messages);
       })
       .catch(error => {
         throw new Error(error);

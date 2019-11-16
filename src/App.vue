@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <div class="app-continer">
-      <img class="medallia-logo" src="./assets/medallia-logo.png" @click="this.rederictToMedallia" />
       <nav class="app-nav">
-        <mdb-icon icon="camera-retro" />
+        <!-- <img src="./assets/home-icon.jpg" /> -->
         <router-link class="app-home-link" to="/">Home</router-link>|
         <router-link class="app-inbox-link" to="/inbox">Inbox</router-link>
       </nav>
@@ -15,14 +14,10 @@
 </template>
 
 <script>
-import { FETCH_MESSAGES } from "../src/store/actions.type";
+import { FETCH_MESSAGES } from "./store/actions.type";
 export default {
   name: "app",
-  methods: {
-    rederictToMedallia() {
-      window.location = "https://www.medallia.com";
-    }
-  },
+
   mounted() {
     this.$store.dispatch(FETCH_MESSAGES);
   }
