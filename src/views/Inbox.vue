@@ -1,12 +1,15 @@
 <template>
   <div class="inbox-main-container">
-    <h3 class="inbox-current-page">Current Page: {{ currentPage }} / {{rows/perPage}}</h3>
+    <h3 class="inbox-current-page">
+      Current Page: {{ currentPage }} / {{ Math.ceil(rows / perPage) }}
+    </h3>
     <section>
       <b-table
+        ref="table"
         class="inbox-table-container"
         hover
         small
-        :items="this.messages"
+        :items="this.getMessages"
         :per-page="perPage"
         :current-page="currentPage"
         :fields="fields"
@@ -24,11 +27,10 @@
   </div>
 </template>
 
-
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { inboxData } from "../consts/pagesData";
-
+import { UPDATE_ISREAD_MESSAGE } from "../store/actions.type";
 export default {
   name: "Inbox",
   data() {
@@ -36,12 +38,14 @@ export default {
   },
   computed: {
     ...mapState(["messages"]),
+    ...mapGetters(["getMessages"]),
     rows() {
       return this.messages.length;
     }
   },
   methods: {
     redirectToMessage(record) {
+      this.$store.dispatch(UPDATE_ISREAD_MESSAGE, record);
       return this.$router.push({ name: "message", params: { id: record.id } });
     },
     markUnreadMessage(message) {
@@ -50,4 +54,3 @@ export default {
   }
 };
 </script>
-

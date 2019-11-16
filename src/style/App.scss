@@ -8,12 +8,22 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+    .home-logo {
+      height: 25px;
+      margin-right: 10px;
+      margin-top: 4px;
+    }
+    .mail-logo {
+      height: 30px;
+      margin-left: 15px;
+      margin-top: 3px;
+    }
   }
 
   .app-home-link {
     margin-right: 20px;
   }
   .app-inbox-link {
-    margin-left: 20px;
+    margin-left: 14px;
   }
 }

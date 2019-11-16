@@ -11,8 +11,8 @@
       "content": "Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
       "email": "khars0@vk.com",
       "date": "11/21/2018",
-      "isRead": false,
-      "isDeleted": false
+      "isRead": true,
+      "isDeleted": true
     },
     {
       "id": 2,
@@ -21,8 +21,8 @@
       "content": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
       "email": "skench1@moonfruit.com",
       "date": "5/23/2019",
-      "isRead": false,
-      "isDeleted": false
+      "isRead": true,
+      "isDeleted": true
     },
     {
       "id": 3,
@@ -32,7 +32,7 @@
       "email": "jcoppins2@eventbrite.com",
       "date": "6/25/2019",
       "isRead": true,
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "id": 4,
@@ -62,7 +62,7 @@
       "email": "omatelyunas5@yolasite.com",
       "date": "12/13/2018",
       "isRead": true,
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "id": 7,
@@ -91,8 +91,8 @@
       "content": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
       "email": "everney8@webeden.co.uk",
       "date": "9/22/2019",
-      "isRead": false,
-      "isDeleted": false
+      "isRead": true,
+      "isDeleted": true
     },
     {
       "id": 10,
@@ -101,8 +101,8 @@
       "content": "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
       "email": "sshilburne9@oaic.gov.au",
       "date": "2/10/2019",
-      "isRead": false,
-      "isDeleted": false
+      "isRead": true,
+      "isDeleted": true
     },
     {
       "id": 11,
@@ -142,7 +142,7 @@
       "email": "psaccod@google.it",
       "date": "6/1/2019",
       "isRead": true,
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "id": 15,
@@ -182,7 +182,7 @@
       "email": "rgillitth@gravatar.com",
       "date": "10/5/2019",
       "isRead": true,
-      "isDeleted": false
+      "isDeleted": true
     },
     {
       "id": 19,
@@ -191,7 +191,7 @@
       "content": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
       "email": "cibarrai@amazon.co.uk",
       "date": "6/26/2019",
-      "isRead": false,
+      "isRead": true,
       "isDeleted": false
     },
     {
@@ -201,8 +201,8 @@
       "content": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
       "email": "jbutertonj@live.com",
       "date": "12/5/2018",
-      "isRead": false,
-      "isDeleted": false
+      "isRead": true,
+      "isDeleted": true
     },
     {
       "id": 21,
@@ -251,7 +251,7 @@
       "content": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
       "email": "mgasparo@mtv.com",
       "date": "2/25/2019",
-      "isRead": false,
+      "isRead": true,
       "isDeleted": false
     },
     {

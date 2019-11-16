@@ -20,7 +20,6 @@ import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "home",
-
   computed: {
     ...mapState(["user"]),
     ...mapGetters(["getMessages", "getUnreadMessages"]),

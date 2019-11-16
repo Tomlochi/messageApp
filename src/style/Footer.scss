@@ -1,0 +1,15 @@
+.footer-main-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  .footer-logo {
+    height: 55px;
+  }
+  .footer-text {
+    margin-top: 18px;
+  }
+}
+
+.footer-divider {
+  min-height: 67vh;
+}
